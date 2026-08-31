@@ -89,3 +89,63 @@ h2 { font-size: clamp(2.5rem, 5vw, 5.25rem); }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
+
+.section--processes { min-block-size: auto; }
+.section__eyebrow { margin: 0 0 1.25rem; color: var(--color-accent); font-size: .8rem; font-weight: 650; letter-spacing: .12em; text-transform: uppercase; }
+.section--processes h2 { max-width: 16ch; }
+.processes__intro { max-width: 48rem; margin: 2.25rem 0 0; font-size: clamp(1.1rem, 1.8vw, 1.4rem); line-height: 1.45; }
+.processes__areas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: clamp(4rem, 9vh, 7rem); border-top: 1px solid var(--color-border); }
+.processes__area { min-width: 0; padding: clamp(1.75rem, 3vw, 2.6rem) clamp(1.25rem, 3vw, 2.8rem) clamp(2rem, 3vw, 2.8rem) 0; border-bottom: 1px solid var(--color-border); }
+.processes__area:nth-child(even) { padding-right: 0; padding-left: clamp(1.25rem, 3vw, 2.8rem); border-left: 1px solid var(--color-border); }
+.processes__area-number { margin: 0 0 1.5rem; color: var(--color-accent); font-size: 1rem; font-variant-numeric: tabular-nums; letter-spacing: .08em; }
+.processes__area h3, .processes__method h3 { margin: 0; font-size: clamp(1.25rem, 2vw, 1.6rem); font-weight: 600; letter-spacing: -.025em; line-height: 1.15; }
+.processes__area > p:not(.processes__area-number) { margin: .8rem 0 0; color: var(--color-text-muted); font-size: clamp(.95rem, 1.4vw, 1.08rem); }
+.processes__support { color: var(--color-text) !important; font-size: .92rem !important; line-height: 1.5; }
+.processes__flow, .processes__method-flow { color: var(--color-accent) !important; font-size: .72rem !important; font-weight: 650; letter-spacing: .08em; line-height: 1.65; text-transform: uppercase; overflow-wrap: anywhere; }
+.processes__method { margin-top: clamp(4rem, 9vh, 7rem); padding-top: 1.5rem; border-top: 1px solid var(--color-accent); }
+.processes__method-flow { margin: 1.25rem 0; font-size: clamp(.76rem, 1.1vw, .9rem) !important; word-spacing: .12em; }
+.processes__method > p:last-child { max-width: 45rem; margin: 0; color: var(--color-text-muted); font-size: clamp(.98rem, 1.5vw, 1.12rem); }
+.processes__result { max-width: 48rem; margin-top: clamp(4rem, 9vh, 7rem); padding-top: 1.5rem; border-top: 1px solid var(--color-accent); }
+.processes__result-label { margin: 0; color: var(--color-accent); font-size: .75rem; font-weight: 650; letter-spacing: .12em; }
+.processes__result > p:last-child { margin: .9rem 0 0; font-size: clamp(1.08rem, 1.8vw, 1.35rem); line-height: 1.45; }
+
+@media (max-width: 900px) {
+  .processes__areas { grid-template-columns: 1fr; }
+  .processes__area, .processes__area:nth-child(even) { padding-right: 0; padding-left: 0; border-left: 0; }
+}
+
+.processes__document-structure { display: flex; flex-wrap: wrap; gap: .65rem 1rem; margin: 1.3rem 0 0; padding: 0; list-style: none; }
+.processes__document-structure li { position: relative; padding-left: .9rem; color: var(--color-accent); font-size: .72rem; font-weight: 650; letter-spacing: .08em; line-height: 1.35; }
+.processes__document-structure li:not(:first-child)::before { position: absolute; top: .1rem; bottom: .1rem; left: 0; width: 1px; background: var(--color-border); content: ""; }
+
+.processes__procedure { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .4rem; margin: 1.3rem 0 0; padding: 0; list-style: none; }
+.processes__procedure li { position: relative; min-width: 0; padding-top: .65rem; border-top: 1px solid var(--color-border); color: var(--color-text); font-size: .72rem; line-height: 1.35; overflow-wrap: anywhere; }
+.processes__procedure li:not(:last-child)::after { position: absolute; top: -.05rem; right: -.25rem; width: .5rem; height: 1px; background: var(--color-accent); content: ""; }
+.processes__procedure span, .processes__method-flow span { display: block; margin-bottom: .35rem; color: var(--color-accent); font-size: .64rem; font-variant-numeric: tabular-nums; letter-spacing: .08em; }
+
+.processes__method-flow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .75rem; margin: 1.5rem 0; padding: 0; list-style: none; color: var(--color-text) !important; }
+.processes__method-flow li { position: relative; min-width: 0; padding-top: .7rem; border-top: 1px solid var(--color-border); color: var(--color-text); font-size: clamp(.78rem, 1.1vw, .92rem); line-height: 1.35; overflow-wrap: anywhere; }
+.processes__method-flow li:not(:last-child)::after { position: absolute; top: -.05rem; right: -.4rem; width: .8rem; height: 1px; background: var(--color-accent); content: ""; }
+
+@media (max-width: 560px) {
+  .processes__procedure, .processes__method-flow { grid-template-columns: 1fr; gap: 0; }
+  .processes__procedure li, .processes__method-flow li { padding: .7rem 0 .7rem 2.25rem; }
+  .processes__procedure li:not(:last-child)::after, .processes__method-flow li:not(:last-child)::after { top: auto; right: auto; bottom: -.35rem; left: .4rem; width: 1px; height: .7rem; }
+  .processes__procedure span, .processes__method-flow span { position: absolute; top: .75rem; left: 0; }
+}
+
+.processes__transformation { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 4vw, 4rem); margin-top: clamp(4rem, 9vh, 7rem); }
+.processes__transformation::before { position: absolute; top: .55rem; right: 0; left: 0; height: 1px; background: var(--color-border); content: ""; }
+.processes__state { position: relative; min-width: 0; padding-top: 1.75rem; }
+.processes__state-label { display: inline-block; margin: 0; padding-right: .85rem; background: var(--color-background); color: var(--color-accent); font-size: .72rem; font-weight: 650; letter-spacing: .1em; line-height: 1.1; }
+.processes__state > p:last-child { max-width: 19rem; margin: 1rem 0 0; color: var(--color-text-muted); font-size: clamp(.98rem, 1.4vw, 1.1rem); line-height: 1.45; }
+.processes__validation { max-width: 47rem; margin: clamp(4rem, 8vh, 6rem) 0 0; color: var(--color-text-muted); font-size: clamp(1rem, 1.5vw, 1.15rem); line-height: 1.5; }
+.processes__result { margin-top: clamp(4rem, 8vh, 6rem); }
+
+@media (max-width: 700px) {
+  .processes__transformation { grid-template-columns: 1fr; gap: 2.5rem; padding-left: 1.25rem; }
+  .processes__transformation::before { top: 0; bottom: 0; left: 0; width: 1px; height: auto; }
+  .processes__state { padding-top: 0; }
+  .processes__state-label { padding: 0; background: transparent; }
+  .processes__state > p:last-child { max-width: 32rem; }
+}
